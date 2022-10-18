@@ -9,6 +9,10 @@ environment:
 
 dependencies:
   bloc: ^8.1.0
+  cofeeholic_api:
+    path: packages/cofeeholic_api
+  coffee_images_repository:
+    path: packages/coffee_images_repository
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
@@ -16,11 +20,16 @@ dependencies:
     sdk: flutter
   get_it: ^7.2.0
   intl: ^0.17.0
+  local_storage_cofeeholic_api:
+    path: packages/local_storage_cofeeholic_api
+  random_coffee_coffeeholic_api:
+    path: packages/random_coffee_coffeeholic_api
 
 dev_dependencies:
   bloc_test: ^9.1.0
   flutter_test:
     sdk: flutter
+  mockingjay: ^0.3.0
   mocktail: ^0.3.0
   very_good_analysis: ^3.1.0
 
