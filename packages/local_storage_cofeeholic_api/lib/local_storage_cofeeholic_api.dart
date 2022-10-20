@@ -9,3 +9,4 @@
 library local_storage_cofeeholic_api;
 
 export 'src/local_storage_cofeeholic_api.dart';
+export 'src/services/internet_services.dart';

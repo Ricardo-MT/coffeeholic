@@ -9,10 +9,19 @@ import 'package:cofeeholic_api/cofeeholic_api.dart';
 // ignore_for_file: prefer_const_constructors
 import 'package:test/test.dart';
 
+class TestCofeeholicApi extends CofeeholicApi {
+  TestCofeeholicApi() : super();
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) {
+    return super.noSuchMethod(invocation);
+  }
+}
+
 void main() {
   group('CofeeholicApi', () {
     test('can be instantiated', () {
-      expect(CofeeholicApi(), isNotNull);
+      expect(TestCofeeholicApi(), isNotNull);
     });
   });
 }

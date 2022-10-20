@@ -9,3 +9,4 @@
 library cofeeholic_api;
 
 export 'src/cofeeholic_api.dart';
+export 'src/models/coffee_image.dart';

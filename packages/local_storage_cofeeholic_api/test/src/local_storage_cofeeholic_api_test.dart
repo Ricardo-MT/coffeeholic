@@ -9,11 +9,14 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:local_storage_cofeeholic_api/local_storage_cofeeholic_api.dart';
+import 'package:local_storage_cofeeholic_api/src/services/internet_services.dart';
+
+class FakeApi extends Fake implements Api {}
 
 void main() {
   group('LocalStorageCofeeholicApi', () {
     test('can be instantiated', () {
-      expect(LocalStorageCofeeholicApi(), isNotNull);
+      expect(LocalStorageCofeeholicApi(FakeApi()), isNotNull);
     });
   });
 }

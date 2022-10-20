@@ -8,8 +8,14 @@ environment:
   flutter: 3.3.3
 
 dependencies:
+  cofeeholic_api:
+    path: ../cofeeholic_api
   flutter:
     sdk: flutter
+  http: ^0.13.5
+  meta: ^1.7.0
+  rxdart: ^0.27.5
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

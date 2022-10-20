@@ -8,4 +8,5 @@
 /// A repository that handles requests related to coffee images.
 library coffee_images_repository;
 
+export 'package:cofeeholic_api/cofeeholic_api.dart' show CoffeeImage;
 export 'src/coffee_images_repository.dart';
