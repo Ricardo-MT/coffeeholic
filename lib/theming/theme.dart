@@ -8,6 +8,10 @@ class FlutterCoffeeholicTheme {
       appBarTheme: AppBarTheme(
         color: lightColorScheme.primary,
       ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: AppColors.white,
+        foregroundColor: AppColors.yellow,
+      ),
       textTheme: textTheme,
       colorScheme: lightColorScheme,
       snackBarTheme: const SnackBarThemeData(
@@ -20,6 +24,10 @@ class FlutterCoffeeholicTheme {
     return ThemeData(
       appBarTheme: AppBarTheme(
         color: lightColorScheme.primary,
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: AppColors.white,
+        foregroundColor: AppColors.yellow,
       ),
       textTheme: textTheme,
       colorScheme: darkColorScheme,
@@ -47,25 +55,25 @@ class FlutterCoffeeholicTheme {
 
   static ColorScheme get lightColorScheme {
     return ThemeData.light().colorScheme.copyWith(
-      primary: AppColors.yellow,
-      onPrimary: AppColors.black,
-      secondary: AppColors.grey1,
-      onSecondary: AppColors.black,
-      error: AppColors.error,
-      tertiary: AppColors.grey2,
-      brightness: Brightness.light,
-    );
+          primary: AppColors.yellow,
+          onPrimary: AppColors.black,
+          secondary: AppColors.grey1,
+          onSecondary: AppColors.black,
+          error: AppColors.error,
+          tertiary: AppColors.grey2,
+          brightness: Brightness.light,
+        );
   }
 
   static ColorScheme get darkColorScheme {
     return ThemeData.dark().colorScheme.copyWith(
-      primary: AppColors.black,
-      onPrimary: AppColors.yellow,
-      secondary: AppColors.black,
-      onSecondary: AppColors.grey1,
-      error: AppColors.error,
-      tertiary: AppColors.grey2,
-      brightness: Brightness.dark,
-    );
+          primary: AppColors.black,
+          onPrimary: AppColors.yellow,
+          secondary: AppColors.black,
+          onSecondary: AppColors.grey1,
+          error: AppColors.error,
+          tertiary: AppColors.grey2,
+          brightness: Brightness.dark,
+        );
   }
 }

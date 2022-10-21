@@ -14,24 +14,24 @@ class CoffeeImagesRepository {
   const CoffeeImagesRepository({
     required CofeeholicApi cofeeholicApi,
   }) : _cofeeholicApi = cofeeholicApi;
-  
+
   final CofeeholicApi _cofeeholicApi;
 
   /// Requests a new random coffee image.
   Future<CoffeeImage> getRandomImage() => _cofeeholicApi.getRandomImage();
-  
+
   /// Saves the image as favorite.
-  Future<CoffeeImage> saveImageInFavorites() => 
-  _cofeeholicApi.saveImageInFavorites();
+  Future<CoffeeImage> saveImageInFavorites(CoffeeImage image) =>
+      _cofeeholicApi.saveImageInFavorites(image);
 
   /// Retrieves all images saved as favorites.
-  Future<List<CoffeeImage>> getFavoriteImages() => 
-  _cofeeholicApi.getFavoriteImages();
-  
+  Future<List<CoffeeImage>> getFavoriteImages() =>
+      _cofeeholicApi.getFavoriteImages();
+
   /// Removes an image from favorites.
-  /// 
+  ///
   /// If no image with the given id exists, a [ImageNotFoundException] error is
   /// thrown.
-  Future<int> removeImageFromFavorites(CoffeeImage image) => 
-  _cofeeholicApi.removeImageFromFavorites(image);
+  Future<int> removeImageFromFavorites(CoffeeImage image) =>
+      _cofeeholicApi.removeImageFromFavorites(image);
 }

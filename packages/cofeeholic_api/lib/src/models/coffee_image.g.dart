@@ -8,8 +8,8 @@ part of 'coffee_image.dart';
 
 CoffeeImage _$CoffeeImageFromJson(Map<String, dynamic> json) => CoffeeImage(
       id: json['id'] as String?,
-      timestamp: json['timestamp'] as String,
-      imageData: json['imageData'] as String,
+      timestamp: json['timestamp'] as int,
+      imageData: json['imageData'] as Uint8List,
     );
 
 Map<String, dynamic> _$CoffeeImageToJson(CoffeeImage instance) =>

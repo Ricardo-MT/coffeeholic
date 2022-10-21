@@ -1,4 +1,5 @@
 import 'package:coffeeholic/sections/discover/discover.dart';
+import 'package:coffeeholic/sections/favorites/favorites.dart';
 import 'package:coffeeholic/sections/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,22 +27,24 @@ class HomeView extends StatelessWidget {
       body: IndexedStack(
         index: selectedTab.index,
         // children: const [TodosOverviewPage(), StatsPage()],
-        children: [const DiscoverPage(), Container(color: Colors.blue,)],
+        children: const [
+          DiscoverPage(),
+          FavoritesPage(),
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _HomeTabButton(
               groupValue: selectedTab,
               value: HomeTab.discover,
-              icon: const Icon(Icons.list_rounded),
+              icon: const Icon(Icons.search),
             ),
             _HomeTabButton(
               groupValue: selectedTab,
               value: HomeTab.favorites,
-              icon: const Icon(Icons.show_chart_rounded),
+              icon: const Icon(Icons.collections),
             ),
           ],
         ),
@@ -66,8 +69,9 @@ class _HomeTabButton extends StatelessWidget {
     return IconButton(
       onPressed: () => context.read<HomeCubit>().setTab(value),
       iconSize: 32,
-      color:
-          groupValue != value ? null : Theme.of(context).colorScheme.secondary,
+      color: groupValue != value
+          ? Theme.of(context).colorScheme.onPrimary
+          : Theme.of(context).colorScheme.primary,
       icon: icon,
     );
   }

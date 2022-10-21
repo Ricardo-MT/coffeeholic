@@ -18,13 +18,13 @@ abstract class CofeeholicApi {
   Future<CoffeeImage> getRandomImage();
 
   /// Saves the image as favorite.
-  Future<CoffeeImage> saveImageInFavorites();
+  Future<CoffeeImage> saveImageInFavorites(CoffeeImage image);
 
   /// Retrieves all images saved as favorites.
   Future<List<CoffeeImage>> getFavoriteImages();
 
   /// Removes an image from favorites.
-  /// 
+  ///
   /// If no image with the given id exists, a [ImageNotFoundException] error is
   /// thrown.
   Future<int> removeImageFromFavorites(CoffeeImage image);

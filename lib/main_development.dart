@@ -10,12 +10,13 @@ import 'package:coffeeholic/bootstrap.dart';
 import 'package:flutter/material.dart';
 import 'package:local_storage_cofeeholic_api/local_storage_cofeeholic_api.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final todosApi = LocalStorageCofeeholicApi(
-    // plugin: await SharedPreferences.getInstance(),
-    const Api(),
+  final todosApi =
+      await LocalStorageCofeeholicApi.getRepository(apiServices: const Api());
+  await bootstrap(
+    todosApi,
+    (cofeeimagesRepository) =>
+        App(cofeeimagesRepository: cofeeimagesRepository),
   );
-  bootstrap(todosApi, (cofeeimagesRepository) =>
-    App(cofeeimagesRepository: cofeeimagesRepository),);
 }

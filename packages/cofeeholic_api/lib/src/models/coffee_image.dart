@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
@@ -20,7 +22,7 @@ part 'coffee_image.g.dart';
 @immutable
 @JsonSerializable()
 class CoffeeImage extends Equatable {
-  /// {@macro todo}
+  /// {@macro image}
   CoffeeImage({
     String? id,
     required this.timestamp,
@@ -31,24 +33,24 @@ class CoffeeImage extends Equatable {
         ),
         id = id ?? const Uuid().v4();
 
-  /// The unique identifier of the todo.
+  /// The unique identifier of the image.
   ///
   /// Cannot be empty.
   final String id;
 
-  /// The epoch date of the todo.
-  final String timestamp;
+  /// The epoch date of the image.
+  final int timestamp;
 
   /// The binary data of the image.
-  final String imageData;
+  final Uint8List imageData;
 
   /// Returns a copy of this coffee image with the given values updated.
   ///
-  /// {@macro todo}
+  /// {@macro image}
   CoffeeImage copyWith({
     String? id,
     String? timestamp,
-    String? imageData,
+    Uint8List? imageData,
   }) {
     return CoffeeImage(
       id: id ?? this.id,
@@ -64,7 +66,11 @@ class CoffeeImage extends Equatable {
   JsonMap toJson() => _$CoffeeImageToJson(this);
 
   @override
-  List<Object> get props => [id, timestamp, imageData,];
+  List<Object> get props => [
+        id,
+        timestamp,
+        imageData,
+      ];
 }
 
 /// The type definition for a JSON-serializable [Map].
